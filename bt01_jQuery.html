@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <script>
+        function insert(){
+            var mh = $("#txtTenMH").val();
+            if (mh.trim() != ""){
+                var str = "<li>" + mh + "</li>";
+                $("ul").append(str);
+            }
+            $("txtTenMH").val("");
+        }
+        $(document).ready(function(){
+            $("button").click(function(){
+                insert();
+            })
+            $("input").change(function(){
+                insert();
+            })
+        })
+    </script>
+    <label for="txtTenMH">Tên môn học: </label>
+    <input type="text" id="txtTenMH">
+    <ul>
+        <li>Python</li>
+        <li>PHP</li>
+    </ul>
+    <p> 
+        <button>Thêm môn học</button>
+    </p>
+   
+</body>
+</html>

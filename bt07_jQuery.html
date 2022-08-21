@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        div#container {
+            display: flex;
+            flex-direction: row;
+        }
+        div div {
+            width: 20%;
+            height: 200px;
+            border: 1px solid black;
+            font-size: 4em;
+            font-weight: 700;
+            text-align: center;
+            line-height: 200px;
+            background-image: url(/images/radial.png);
+        }
+        a {
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            $("#container div").mouseover(function(){
+                $(this).animate({
+                    width:"+=150px",
+                    fontSize:"12em",
+                    fontWeight:900
+                })
+            })
+            .mouseout(function(){
+                $(this).animate({
+                    width:"20%",
+                    fontSize:"4em",
+                    fontWeight:700
+                })
+            })
+        })
+    </script>
+</head>
+<body>
+    <div id="container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+    </div>
+</body>
+</html>

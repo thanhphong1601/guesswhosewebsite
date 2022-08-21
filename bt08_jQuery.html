@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQ 08</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            border-radius: 50px;
+            background-color: cyan;
+            left: 0;
+            top: 0;
+            position: absolute;
+        }
+    </style>
+    <script>
+        $(document).ready(function() {
+            move = false;
+        $("#box").mousedown(function(e) {
+            prevX = e.pageX - this.offsetLeft;
+            prevY = e.pageY - this.offsetTop;
+            move = true;
+        });
+
+        $("#box").mousemove(function(e) {
+            if(move) {
+                var curX = e.pageX - this.offsetLeft;
+                var curY = e.pageY - this.offsetTop;
+
+                var dx = curX - prevX;
+                var dy = curY - prevY;
+                var circleLeft = parseInt($(this).css("left"));
+                var circleTop = parseInt($(this).css("top"));
+
+                var newLeft = circleLeft + dx + "px";
+                var newTop = circleTop + dy + "px";
+                $(this).css("left", newLeft);
+                $(this).css("top", newTop);
+            }
+        })
+        })
+    </script>
+</head>
+<body>
+    <div id="box"></div>
+</body>
+<a href="/jquery.html">Return</a>
+</html>

@@ -1,0 +1,60 @@
+body {
+    background-color: antiquewhite;
+    font-family: 'Times New Roman', Times, serif;
+}
+h2 {
+    font-size: 70px;
+    text-align: center;
+}
+hr {
+    width: 60%;
+}
+nav {
+    height: 50px;
+    background-color: rgb(209, 209, 209);
+    line-height: 50px;
+    padding-left: 20px;
+    border-radius: 10px;
+}
+h3 {
+    font-size: 1.4em;
+}
+nav a {
+    text-decoration: none;
+    font-size: 1.2em;
+    color: black;
+    padding: 10px;
+}
+img {
+    height: 400px;
+    width: 300px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+.myInf {
+    font-size: 30px;
+    text-align: justify;
+    padding-left: 200px;
+    padding-right: 200px;
+    padding-bottom: 80px;
+}
+div a {
+    text-decoration: none;
+    font-size: 35px;
+    color: rgb(39, 39, 39);
+}
+.homeworkList {
+    text-align: center;
+}
+div.homeworkList div {
+    display: inline-block;
+}
+a:hover {
+    color: rgb(148, 102, 223);
+    background-color: rgb(221, 221, 221);
+    border-radius: 10px;
+}
+img:hover {
+    height: 410px;
+    width: 310px;
+}

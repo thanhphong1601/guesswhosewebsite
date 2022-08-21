@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .large{height: 384px; width: 512px;}
+        .medium{height: 192px; width: 256px;}
+        .small{height: 77px; width: 102px;}
+    </style>
+    <script>
+        function setImgSize(value){
+            document.getElementById("img").className = value;
+        }
+    </script>
+</head>
+<body>
+    <h2>Image Resizing</h2>
+    <hr>
+    <p id="scale">Scale:
+        <input type="radio" name="scaler" value="small" onclick="setImgSize(this.value)">10%
+        <input type="radio" name="scaler" value="medium" onclick="setImgSize(this.value)">25%    
+        <input type="radio" name="scaler" value="large" checked onclick="setImgSize(this.value)">50%
+    </p>
+    <img id="img" class="large" src="/images/pointlobos.jpg">
+</body>
+</html>

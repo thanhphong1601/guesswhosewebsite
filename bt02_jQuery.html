@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#tinh").click(function(){
+                var ngay1 = $("#dayFrom").val();
+                var ngay2 = $("#dayTo").val();
+                ngay1 = new Date(ngay1);
+                ngay2 = new Date(ngay2);
+                var kq = (ngay2.getTime() - ngay1.getTime()) / (1000 * 3600 * 24);
+                $("#result").html("Số ngày là: " + kq + " ngày");
+            })
+        })
+    </script>
+</head>
+<body>
+    <table>
+        <caption>Tính số ngày giữa 2 thời điểm</caption>
+        <tr>
+            <td>Từ ngày:</td>
+            <td><input type="date" id="dayFrom"></td>
+        </tr>
+        <tr>
+            <td>Đến ngày:</td>
+            <td><input type="date" id="dayTo"></td>
+        </tr>
+        <tr>
+            <td><button id="tinh">Tính số ngày</button></td>
+            <td><span id="result"></span></td>
+        </tr>
+    </table>
+    
+</body>
+</html>

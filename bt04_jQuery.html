@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        div {
+            width: 50px;
+            height: 50px;
+            margin: 5px;
+            float: left;
+        }
+        #result {
+            clear: left;
+            width: 300px;
+            height: 30px;
+        }
+        #color {
+            clear: left;
+            height: 200px;
+            width: 400px;
+            border: 2px solid rgb(156, 156, 156);
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            $("div").click(function(){
+                var color = $(this).css("background-color");
+                var name;
+                switch(color)
+                {
+                    case "rgb(255, 0, 0)": name="Đỏ"; break;
+                    case "rgb(0, 0, 255)": name="Xanh dương"; break;
+                    case "rgb(0, 255, 0)": name="Xanh lá"; break;
+                    case "rgb(255, 0, 255)": name="Tím"; break;
+                }
+                $("#result").html("Màu bạn chọn là " + name + ": " + color);
+                $("#result").css({'color': color, 'font-weight': 'bold'});
+                $("#color").css({'background-color': color});
+            })
+        })
+    </script>
+</head>
+<body>
+    <p>Click lên các hình vuông</p>
+    <div style="background-color:#00f"></div>
+    <div style="background-color:#f00"></div>
+    <div style="background-color:#f0f"></div>
+    <div style="background-color:#0f0"></div>
+    <br><div id="result"></div>
+    <div id="color"></div>
+</body>
+</html>

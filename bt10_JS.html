@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div#divTxt{
+            width: 400px;
+            height: 250px;
+            background-color: #0000cd;
+            color:#7fffd4;
+            text-align: center;
+            line-height: 250px;
+        }
+    </style>
+    <script>
+        function change(){
+            var bkcolor = document.getElementById("bkcolor").value;
+            var txtcolor = document.getElementById("txtcolor").value;
+            document.getElementById("title").innerHTML = document.getElementById("txtInput").value;
+            document.getElementById("divTxt").style.backgroundColor = bkcolor;
+            document.getElementById("divTxt").style.color = txtcolor;
+        }
+    </script>
+</head>
+<body>
+    <div id="divTxt">
+        <h1 id="title">Đây là HTML5</h1>
+    </div>
+    <p>Nhập nội dung:
+        <input type="text" id="txtInput" autofocus value="Đây là HTML5">
+    </p>
+    <p>Màu nền:
+        <input type="color" id="bkcolor" value="#0000cd">
+    </p>
+    <p>Màu chữ
+        <input type="color" id="txtcolor" value="#7fffd4">
+    </p>
+    <button onclick="change()">Thực hiện</button>
+</body>
+</html>

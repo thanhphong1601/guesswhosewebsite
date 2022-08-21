@@ -1,0 +1,14 @@
+body {
+    font-size: 20px;
+    background-color: antiquewhite;
+}
+table, tr, td {
+    width: 500px;
+    border: 1px solid black;
+    border-collapse: collapse;
+    background-color: azure;
+}
+
+td {
+    padding: 10px;
+}

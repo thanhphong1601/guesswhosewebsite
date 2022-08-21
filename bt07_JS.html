@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function chuanHoa(){
+            var s = document.getElementById("txtS1").value;
+            arr = s.split(" ");
+            var i, kq="", temp;
+            for (i = 0; i < arr.length; i++)
+            {
+                temp = arr[i].trim().toLowerCase();
+                if (temp != "")
+                {
+                    temp = temp.substr(0, 1).toUpperCase() + temp.substr(1);
+                    kq += temp + " ";
+                }
+            }
+            document.getElementById("txtS1").value = kq.trim();
+        }
+        function daoChuoi(){
+            var s = document.getElementById("txtS1").value;
+            arr = s.split(" ");
+            var i, kq="";
+            for (i = arr.length - 1; i >= 0; i--)
+                kq += arr[i].trim() + " ";
+            document.getElementById("txtS1").value = kq.trim();
+        }
+        function khoiPhuc(){
+            document.getElementById("txtS1").value = strOrigin;
+        }
+        function chenS2VaoS1(){
+            var s1 = document.getElementById("txtS1").value;
+            var s2 = document.getElementById("txtS2").value;
+            var pos = document.getElementById("txtPos").value;
+            if(pos == "")
+            {
+                alert("Vị trí chưa nhập");
+                return false;
+            }
+            pos = Number(pos);
+            if (isNaN(pos) || pos < 0 || pos > s1.length)
+            {
+                alert("Vị trí không hợp lệ");
+                return false;
+            }
+            if (s2 == "")
+            {
+                alert("Chưa nhập chuỗi 2");
+                return false;
+            }
+            var result = insertAt(s1, s2, pos);
+            if (result)
+                s1 = document.getElementById("txtS1").value = result;
+        }
+        function insertAt(main_str, sub_str, pos){
+            return main_str.slice(0, pos) + sub_str + main_str.slice(pos);
+        }
+        function thayS2BangS3(){
+            var s1 = document.getElementById("txtS1").value;
+            var s2 = document.getElementById("txtS2").value;
+            var s3 = document.getElementById("txtS3").value;
+            var token = new RegExp(s2,"ig");
+            s1 = s1.replace(token, s3);
+            document.getElementById("txtS1").value = s1;
+        }
+        function xoaS2TrongS1(){
+            var s1 = document.getElementById("txtS1").value;
+            var s2 = document.getElementById("txtS2").value;
+            var token = new RegExp(s2, "ig");
+            s1 = s1.replace(token, '');
+            document.getElementById("txtS1").value = s1;
+        }
+    </script>
+</head>
+<body>
+    <table>
+        <caption><h2>CHƯƠNG TRÌNH XỬ LÍ CHUỖI</h2></caption>
+        <tr>
+            <td>Chuỗi S1</td>
+            <td><input type="text" id="txtS1" value="Learning JAVASCRIPT is veRy easy" size="50"></td>
+        </tr>
+        <tr>
+            <td>Chuỗi S2</td>
+            <td><input type="text" id="txtS2" value="javascript" size="50"></td>
+        </tr>
+        <tr>
+            <td>Chuỗi S3</td>
+            <td><input type="text" id="txtS3" value="jQuery" size="50"></td>
+        </tr>
+        <tr>
+            <td>Vị trí chèn</td>
+            <td><input type="text" id="txtPos" value="0"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button onclick="chuanHoa()">Chuẩn hóa chuỗi</button>
+                <button onclick="daoChuoi()">Đảo chuỗi</button>
+                <button onclick="khoiPhuc()">Khôi phục</button>
+            </td>
+         </tr>
+         <tr>
+             <td></td>
+             <td>
+                 <button onclick="thayS2BangS3()">Thay thế S2 bằng S3</button>
+                 <button onclick="chenS2VaoS1()">Chèn S2 vào S1</button>
+                 <button onclick="xoaS2TrongS1()">Xóa S2 trong S1</button>
+             </td>
+         </tr>
+    </table>
+    <script>
+        strOrigin = document.getElementById("txtS1").value;
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+.container {
+    display: flex;
+}
+.left, .right {
+    width: 50%;
+    margin: 15px;
+    background-color: antiquewhite;
+    min-height: 300px;
+}
+.right {
+    line-height: 300px;
+}
+#view {
+    text-align: center;
+    font-size: 5em;
+    color: blue;
+    font-weight: bold;
+}
+fieldset {
+    border: 2px solid blue;
+    font-size: 1.2em;
+}
+ol li {
+    line-height: 30px;
+    padding-left: 20px;
+    background-color: #9FF;
+}
+ol li:nth-child(odd) {
+    background-color: #969;
+}
+.shadow {
+    text-shadow: 7px 7px 5px gray;
+}

@@ -1,0 +1,65 @@
+body {
+    background-color: antiquewhite;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/*task bar*/
+nav {
+    height: 50px;
+    background-color: rgb(209, 209, 209);
+    line-height: 50px;
+    padding-left: 20px;
+    border-radius: 10px;
+}
+nav a {
+    text-decoration: none;
+    font-size: 1.2em;
+    color: black;
+    padding: 10px;
+}
+/*noi dung*/
+/*tieu de*/
+h2 {
+    font-size: 50px;
+    text-align: center;
+}
+.myInf {
+    font-size: 30px;
+    text-align: center;
+    padding-left: 200px;
+    padding-right: 200px;
+    padding-bottom: 40px;
+}
+/*phan bai lam*/
+ul {
+    text-decoration: none;
+    margin-left: 45%;
+    margin-right: 45%;
+    font-size: 20px;
+}
+a {
+    text-decoration: none;
+}
+li a {
+    font-size: 28px;
+    color: rgb(39, 39, 39);
+}
+a:hover {
+    color: rgb(148, 102, 223);
+    background-color: rgb(221, 221, 221);
+    border-radius: 10px;
+}
+.bottomContent {
+    font-size: 25px;
+    margin-top: 70px;
+    color: black;
+}
+div.bottomContent a {
+    margin-left: 10px;
+    color: rgb(39, 39, 39);
+    font-style: italic;
+}
+div.myInf b {
+    font-style: italic;
+    color: rgb(37, 146, 209);
+}

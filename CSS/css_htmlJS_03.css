@@ -1,0 +1,11 @@
+table {
+    border: 1.5px solid black;
+    border-collapse: collapse;
+    width: 20%;
+}
+td {
+    border: 1px solid black;
+}
+caption {
+    font-size: 1.5em;
+}

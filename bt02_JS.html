@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let month = Number(prompt("Nhập tháng"));
+        let year = Number(prompt("Nhập năm", 2000));
+        let days = calDay(month, year);
+        document.writeln("<h2>Tháng " + month + " năm " + year + " có " + days + " ngày<h2>");
+        function isLeafYear(year)
+        {
+                return (year % 400 == 0) || (year % 4 == 0 && year % 100 != 0);
+        }
+        function calDay(month, year)
+        {
+            let days = 0;
+            switch(month)
+            {
+                case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+                    days = 31;
+                    break;
+                case 2:
+                    if (isLeafYear(year))
+                        days = 29;
+                    else
+                        days = 28;
+                    break;
+                case 4: case 6: case 9: case 11:
+                    days = 30;
+                    break;
+            }
+            return days;
+        }
+        function showTime()
+        {
+            var timeNow = new Date();
+            var gio = timeNow.getHours();
+            var phut = timeNow.getMinutes();
+            var giay = timeNow.getSeconds();
+            document.getElementById("time").innerHTML = "Thời gian hiện tại: " + gio + ":" + 
+                (phut < 10 ? 0 + phut : phut) + ":" + (giay < 10 ? 0 + giay : giay);
+        }
+        function showDate()
+        {
+            var d = new Date();
+            var nam = d.getFullYear();
+            var thang = d.getMonth() + 1;
+            var ngay = d.getDate();
+            var thu = d.getDay() + 1;
+            var gio = d.getHours;
+            var phut = d.getMinutes();
+            var giay = d.getSeconds();
+            document.getElementById("date").innerHTML = "Hôm nay, " + 
+                (thu == 1 ? "Chủ nhật" : "Thứ " + thu) + ", ngày " + ngay + "/" + thang + "/" + nam;
+            setInterval(showTime, 1000);
+        }
+    </script>
+    <h3 id="date"></h3>
+    <h3 id="time"></h3>
+    <button onclick="showDate()">Xem ngày giờ</button>
+</body>
+</html>

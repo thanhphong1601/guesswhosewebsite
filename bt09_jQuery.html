@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery09</title>
+    <link rel="stylesheet" href="/CSS/css_jQuery9.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="/JS/jQuery9.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+            <fieldset>
+                <legend>Chọn</legend>
+                <p>
+                    <input type="radio" name="shadow" id="no" checked>Chữ bình thường
+                    <br><input type="radio" name="shadow" id="yes">Chữ có bóng<br>
+                </p>
+                <p>
+                    Chọn màu chữ: <input type="color" id="txtColor" value="#0000ff">
+                    <p>
+                        <button id="btDel">Xóa phần tử cuối</button>
+                        <button id="btUndo">Phục hồi</button>
+                    </p>
+                </p>
+            </fieldset>
+            <fieldset>
+                <legend>Click vào một chuỗi</legend>
+                <ol id="list">
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JQUERY</li>
+                    <li>JAVASCRIPT</li>
+                </ol>
+            </fieldset>
+        </div>
+        <div class="right">
+            <p id="view">HTML</p>
+        </div>
+    </div>
+</body>
+</html>

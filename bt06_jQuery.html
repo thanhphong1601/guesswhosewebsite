@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        div {
+            position: relative;
+            height: 100px;
+            width: 200px;
+            background-color: red;
+            border: 1px solid black;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            $("#btMoveRight").click(function(){
+                var left = $("body").width() - $("div").outerWidth(true);
+                $("div").animate({
+                    'left' : left
+                }, 1000)
+            })
+            $("#btMoveLeft").click(function(){
+                $("div").animate({
+                    'left' : '0'
+                }, 1000)
+            })
+            $("#btMoveDown").click(function(){
+                var top = $("body").height() - $("div").outerHeight(true);
+                $("div").animate({
+                    'top' : top
+                }, 1000)
+            })
+            $("#btMoveUp").click(function(){
+                $("div").animate({
+                    'top': '0'
+                }, 1000)
+            })
+        })
+    </script>
+</head>
+<body>
+    <div></div>
+    <button id="btMoveRight">Move right</button>
+    <button id="btMoveLeft">Move left</button>
+    <button id="btMoveUp">Move up</button>
+    <button id="btMoveDown">Move down</button>
+</body>
+</html>

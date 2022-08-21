@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="draw()">
+    <canvas id="canvas" width="400" height="400"></canvas>
+    <script>
+        function draw(){
+            var canvas = document.getElementById('canvas');
+            var ctx = canvas.getContext('2d');//thiet bi ngu canh
+            //rectangle
+            ctx.fillStyle = "cyan"; //color
+            ctx.fillRect(0, 0, 400, 400);
+            //fill circle
+            ctx.beginPath();
+            ctx.arc(200, 200, 200, 0, 2 * Math.PI);
+            var grd = ctx.createLinearGradient(0, 0, 0, canvas.height);
+            grd.addColorStop(0, "purple");
+            grd.addColorStop(0.5, "yellow");
+            grd.addColorStop (1, "aquamarine");
+            ctx.fillStyle = grd;
+            ctx.fill();
+            ctx.stroke();
+            //polygon
+            ctx.beginPath();
+            ctx.moveTo(200, 0);
+            ctx.lineTo(400, 200);
+            ctx.lineTo(200, 400);
+            ctx.lineTo(0, 200);
+            ctx.lineTo(200, 0);
+            ctx.fillStyle = "blue";
+            ctx.fill();
+            ctx.strokeStyle = "green";
+            ctx.lineWidth = 5;
+            ctx.stroke();
+            //in chu
+            ctx.font = "80px Arial";
+            ctx.lineWidth = 5;
+            ctx.strokeStyle = "red";
+            ctx.strokeText("HTML5", canvas.width / 5, canvas.height / 2 + 25);
+        }
+    </script>
+</body>
+</html>
